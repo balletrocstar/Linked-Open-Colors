@@ -24,7 +24,7 @@ function get_suffix() {
 function redirect($color, $suffix) {
     header("HTTP/1.1 303");
     header("Vary: Accept");
-    header("Location: " . $color . "." . $suffix);
+    header("Location: http://loc.moreways.net/color/" . $color . "." . $suffix);
 }
 
 redirect($_GET["color"], get_suffix());
