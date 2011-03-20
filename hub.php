@@ -3,7 +3,9 @@
 error_reporting(0);
 
 function get_color() {
-    return strtolower($_GET["color"]);
+    $color = $_GET["color"];
+    //$color = strtolower($color);
+    return $color;
 }
 
 function get_suffix() {
