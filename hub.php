@@ -2,6 +2,10 @@
 
 error_reporting(0);
 
+function get_color() {
+    return strtolower($_GET["color"]);
+}
+
 function get_suffix() {
     require_once "inc/conNeg/conNeg.inc.php";
     $mimeBest = conNeg::mimeBest();
@@ -27,7 +31,7 @@ function redirect($color, $suffix) {
     header("Location: http://loc.moreways.net/color/" . $color . "." . $suffix);
 }
 
-redirect($_GET["color"], get_suffix());
+redirect(get_color(), get_suffix());
 
 ?>
 
