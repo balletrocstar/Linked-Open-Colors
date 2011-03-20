@@ -21,10 +21,13 @@ function get_suffix() {
     }
 }
 
-$color = $_GET["color"];
-$suffix = get_suffix();
+function redirect($color, $suffix) {
+    header("HTTP/1.1 303");
+    header("Vary: Accept");
+    header("Location: " . $color . "." . $suffix);
+}
 
-echo $color . " as " . $suffix;
+redirect($_GET["color"], get_suffix());
 
 ?>
 
