@@ -16,7 +16,7 @@ echo '<?xml version="1.0" encoding="utf-8"?>'; ?>
   <loco:Color rdf:about="http://loc.moreways.net/color/<? echo $_GET['color']; ?>">
     <rdfs:label>#<? echo $_GET['color']; ?></rdfs:label>
     <foaf:page rdf:resource="http://loc.moreways.net/color/<? echo $_GET['color']; ?>.html" />
-  </loco>
+  </loco:Color>
   
 </rdf:RDF>
 
