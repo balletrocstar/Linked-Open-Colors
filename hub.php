@@ -1,5 +1,7 @@
 <?php
 
+error_reporting(0);
+
 function get_suffix() {
     require_once "inc/conNeg/conNeg.inc.php";
     $mimeBest = conNeg::mimeBest();
