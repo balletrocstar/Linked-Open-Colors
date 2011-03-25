@@ -17,7 +17,7 @@ from django.conf.urls.defaults import *
 urlpatterns = patterns('',
     (r'^$', 'django.views.generic.simple.direct_to_template', {'template': 'index.html'}),
     (r'^color/(?P<rgb>\d+)$', 'colors.views.rgb'),
-    (r'^color/(?P<rgb>\s+).html$', 'colors.views.rgb_html'),
-    (r'^color/(?P<rgb>\s+).rdf$', 'colors.views.rgb_rdf')
+    (r'^color/(?P<rgb>\d+).html$', 'colors.views.rgb_html'),
+    (r'^color/(?P<rgb>\d+).rdf$', 'colors.views.rgb_rdf')
 )
 

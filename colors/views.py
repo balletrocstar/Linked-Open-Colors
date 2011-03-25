@@ -15,7 +15,7 @@ def rgb_html(request, rgb):
     logging.info("Serving RGB color as HTML")
     return HttpResponse("%s in HTML" % rgb)
 
-def rgb_html(request, rdf):
+def rgb_rdf(request, rgb):
     logging.info("Serving RGB color as RDF")
     return HttpResponse("%s in RDF" % rgb)
 
