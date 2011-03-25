@@ -15,11 +15,9 @@
 from django.conf.urls.defaults import *
 
 urlpatterns = patterns('',
-    # Example:
-    # (r'^foo/', include('foo.urls')),
-
-    (r'^', 'django.views.generic.simple.direct_to_template', {'template': 'index.html'}),
-
-    # Uncomment this for admin:
-#     (r'^admin/', include('django.contrib.admin.urls')),
+    (r'^$', 'django.views.generic.simple.direct_to_template', {'template': 'index.html'}),
+    (r'^color/(?P<rgb>\d+)$', 'colors.views.rgb'),
+    (r'^color/(?P<rgb>\s+).html$', 'colors.views.rgb_html'),
+    (r'^color/(?P<rgb>\s+).rdf$', 'colors.views.rgb_rdf')
 )
+

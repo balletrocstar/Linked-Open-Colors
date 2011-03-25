@@ -17,9 +17,11 @@ AUTHORS
 THIRD PARTY LIBRARIES
 ---------------------
 
-This project uses some third party libraties:
+This project uses some third party libraries:
 
  * Google App Engine Django  <http://google-app-engine-django.googlecode.com/>
+
+ * Mimeparse <http://mimeparse.googlecode.com/>
 
 INSTALLING
 ----------
