@@ -30,7 +30,7 @@
     <p>
       <form id="colors" action="" method="post" style="width: 100%; display: block; margin: 1.5em auto 2em 5em;">
         <tt style="font-size: 1.5em;">#</tt>
-        <input type="text" name="color" value="ff0000" size="6" maxlength="6" title="ID in MarkMail" />
+        <input type="text" name="color" value="FF0000" size="6" maxlength="6" title="color" />
         <input type="submit" value="Go" />
       </form>
     </p>
@@ -52,7 +52,7 @@
                 if (color.length != 6) {
                     alert("Invalid color!");
                 } else {
-                    window.location = "http://loc.moreways.net/color/" + color;
+                    window.location = window.location + "color/" + color;
                 }
                 return false;
             });
