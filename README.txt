@@ -21,3 +21,15 @@ This project uses some third party libraties:
 
  * Google App Engine Django  <http://google-app-engine-django.googlecode.com/>
 
+INSTALLING
+----------
+
+if you want to install this application, there are some prerequisites:
+
+* Accessing the Google App Engine SDK, you should run:
+
+    ln -s /path/to/google_appengine .google_appengine
+
+* Install Django, 1.0 or greater 
+
+
