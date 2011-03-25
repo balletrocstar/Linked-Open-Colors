@@ -26,10 +26,13 @@ INSTALLING
 
 if you want to install this application, there are some prerequisites:
 
-* Accessing the Google App Engine SDK, you should run:
+ * Install Django, 1.0 or greater 
+
+ * Google App Engine SDK, you should run: 
 
     ln -s /path/to/google_appengine .google_appengine
 
-* Install Django, 1.0 or greater 
+And then you can launch it:
 
+    python manage.py runserver
 
