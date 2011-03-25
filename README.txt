@@ -19,5 +19,5 @@ THIRD PARTY LIBRARIES
 
 This project uses some third party libraties:
 
- * PHP Content Negotiation library <http://ptlis.net/source/php/content-negotiation/> (GPLv2)
+ * Google App Engine Django  <http://google-app-engine-django.googlecode.com/>
 
