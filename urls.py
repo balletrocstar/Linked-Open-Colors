@@ -18,6 +18,8 @@ urlpatterns = patterns('',
     # Example:
     # (r'^foo/', include('foo.urls')),
 
+    (r'^', 'django.views.generic.simple.direct_to_template', {'template': 'index.html'}),
+
     # Uncomment this for admin:
 #     (r'^admin/', include('django.contrib.admin.urls')),
 )
