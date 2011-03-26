@@ -20,5 +20,9 @@ def rgb_html(request, rgb):
 
 def rgb_rdf(request, rgb):
     logging.info("Serving RGB color #%s as RDF" % rgb)
-    return HttpResponse("%s in RDF" % rgb)
+    color = Color(rgb)
+    #return HttpResponse(color.get_rdf_xml(), mimetype="application/rdf+xml")
+    ctx = {}
+    ctx["color"] = color
+    return render_to_response("color.rdf", ctx, mimetype="application/rdf+xml")
 
