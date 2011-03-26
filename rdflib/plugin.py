@@ -26,7 +26,7 @@ See the `setuptools dynamic discovery of services and plugins`__ for more inform
 from rdflib.store import Store
 from rdflib.parser import Parser
 from rdflib.serializer import Serializer
-from rdflib import query
+#from rdflib import query
 from rdflib.exceptions import Error
 
 
