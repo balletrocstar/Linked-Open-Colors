@@ -16,6 +16,7 @@ class Color:
         self.color = color
         self.format = format
         self.rgb = self.__parse_color(color, format)
+        self.hex = self.__format_hex()
         self.__build_uris()
 
     def __parse_color(self, color, format):
@@ -32,9 +33,9 @@ class Color:
             pass #FIXME
 
     def __str__(self):
-        return "#%s" % self.__format_rgb()
+        return "#%s" % self.hex
 
-    def __format_rgb(self):
+    def __format_hex(self):
         if (self.format == "rrggbb"):
             return self.color
         else:
@@ -48,7 +49,7 @@ class Color:
         if (self.format == "rrggbb"):
             self.primary_uri = self.uri
         else:
-            self.primary_uri = "%s/%s/%s" % (self.base, formats["rrggbb"], self.__format_rgb())
+            self.primary_uri = "%s/%s/%s" % (self.base, formats["rrggbb"], self.hex)
     
     #def get_rdf(self):
     #    if (self.graph == None):
