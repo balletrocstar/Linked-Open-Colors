@@ -1,4 +1,5 @@
 
+from common import if_else
 #import colorsys
 #from rdflib import ConjunctiveGraph, Namespace, URIRef, Literal
 
@@ -37,7 +38,10 @@ class Color:
         if (self.format == "rrggbb"):
             return self.color
         else:
-            return "%X%X%X" % (self.rgb[0], self.rgb[1], self.rgb[2])
+            r = if_else(self.rgb[0]<16, "0%X" % self.rgb[0], "%X" % self.rgb[0])
+            g = if_else(self.rgb[1]<16, "0%X" % self.rgb[1], "%X" % self.rgb[1])
+            b = if_else(self.rgb[2]<16, "0%X" % self.rgb[2], "%X" % self.rgb[2])
+            return "%s%s%s" % (r, g, b)
     
     def __build_uris(self):
         self.uri = "%s/%s/%s" % (self.base, formats[self.format], self.color)
