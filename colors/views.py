@@ -4,25 +4,30 @@ from model import Color
 from http import Http303, get_preferred_suffix
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
+from common import if_else
 
-def rgb(request, rgb):
-    logging.info("Serving RGB color #%s with content negotiation" % rgb)
+def color(request, color):
+    logging.info("Serving color '%s' with content negotiation" % color)
     suffix = get_preferred_suffix(request)
-    url = "%s.%s" % (rgb, suffix)
+    url = "%s.%s" % (color, suffix)
     return Http303(url)
 
-def rgb_html(request, rgb):
-    logging.info("Serving RGB color #%s as HTML" % rgb)
-    color = Color(rgb)
-    ctx = {}
-    ctx["color"] = color
+def color_html(request, color, format):
+    logging.info("Serving %s color '%s' as HTML" % (format, color))
+    ctx = { "color" : Color(color, format) }
     return render_to_response("color.html", ctx, mimetype="application/xhtml+xml")
 
-def rgb_rdf(request, rgb):
-    logging.info("Serving RGB color #%s as RDF" % rgb)
-    color = Color(rgb)
+def color_rdf(request, color, format):
+    logging.info("Serving %s color #%s as RDF" % (format, color))
     #return HttpResponse(color.get_rdf_xml(), mimetype="application/rdf+xml")
-    ctx = {}
-    ctx["color"] = color
+    ctx = { "color" : Color(color, format) }
     return render_to_response("color.rdf", ctx, mimetype="application/rdf+xml")
+
+def rgb_html(request, rgb):
+    format = if_else(len(rgb)==3, "rgb", "rrggbb")
+    return color_html(request, rgb, format)
+
+def rgb_rdf(request, rgb):
+    format = if_else(len(rgb)==3, "rgb", "rrggbb")
+    return color_rdf(request, rgb, format)
 

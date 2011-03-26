@@ -16,7 +16,10 @@ from django.conf.urls.defaults import *
 
 urlpatterns = patterns('',
     (r'^$', 'django.views.generic.simple.direct_to_template', {'template': 'index.html'}),
-    (r'^color/rgb/(?P<rgb>[0-9A-F]{6})$', 'colors.views.rgb'),
+    (r'^color/rgb/(?P<color>[0-9A-F]{3})$', 'colors.views.color'),
+    (r'^color/rgb/(?P<rgb>[0-9A-F]{3}).html$', 'colors.views.rgb_html'),
+    (r'^color/rgb/(?P<rgb>[0-9A-F]{3}).rdf$', 'colors.views.rgb_rdf'),
+    (r'^color/rgb/(?P<color>[0-9A-F]{6})$', 'colors.views.color'),
     (r'^color/rgb/(?P<rgb>[0-9A-F]{6}).html$', 'colors.views.rgb_html'),
     (r'^color/rgb/(?P<rgb>[0-9A-F]{6}).rdf$', 'colors.views.rgb_rdf')
 )

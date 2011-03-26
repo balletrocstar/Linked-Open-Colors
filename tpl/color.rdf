@@ -15,7 +15,9 @@
   <loco:Color rdf:about="{{color.uri}}">
     <rdfs:label>{{color}}</rdfs:label>
     <foaf:page rdf:resource="{{color.uri}}.html" />
-
+    {% if color.format != "rrggbb" %}
+    <owl:sameAs rdf:resource="{{color.primary_uri}}" />
+    {% endif %}
   </loco:Color>
   
 </rdf:RDF>
