@@ -163,9 +163,8 @@ def describe(terms,bindings,graph):
 
 from rdflib.namespace import RDF, RDFS
 
-#from rdflib import plugin, exceptions, query
+from rdflib import plugin, exceptions #, query
 #, sparql
-from rdflib import exceptions
 
 from rdflib.term import Node
 from rdflib.term import URIRef
