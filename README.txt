@@ -23,6 +23,9 @@ This project uses some third party libraries:
 
  * Mimeparse <http://mimeparse.googlecode.com/>
 
+ * RDFLib <http://rdflib.net/>
+
+
 INSTALLING
 ----------
 
@@ -30,7 +33,7 @@ if you want to install this application, there are some prerequisites:
 
  * Install Django, 1.0 or greater 
 
- * Google App Engine SDK, you should run: 
+ * Google App Engine SDK for Python, you should run: 
 
     ln -s /path/to/google_appengine .google_appengine
 
