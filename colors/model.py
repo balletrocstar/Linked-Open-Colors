@@ -3,7 +3,7 @@
 
 class Color:
 
-    def __init__(self, rgb, base="http://purl.org/color"):
+    def __init__(self, rgb, base="http://purl.org/color/rgb"):
         self.base = base
         self.rgb = rgb
         self.graph = None

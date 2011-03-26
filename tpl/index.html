@@ -29,6 +29,9 @@
 
     <p>
       <form id="colors" action="" method="post" style="width: 100%; display: block; margin: 1.5em auto 2em 5em;">
+        <select name="type" title="type">
+          <option value="rgb">rgb</option>
+        </select>
         <tt style="font-size: 1.5em;">#</tt>
         <input type="text" name="color" value="FF0000" size="6" maxlength="6" title="color" />
         <input type="submit" value="Go" />
@@ -50,11 +53,12 @@
 
         $(document).ready(function() {
             $("#colors").submit(function() {
+                var type =  $("#colors select[name=type] :selected").val();
                 var color =  $("#colors input[name=color]").val();
                 if (color.length != 6) {
                     alert("Invalid color!");
                 } else {
-                    window.location = window.location + "color/" + color;
+                    window.location = window.location + "color/" + type + "/" + color;
                 }
                 return false;
             });
