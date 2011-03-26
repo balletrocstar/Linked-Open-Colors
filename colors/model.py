@@ -1,5 +1,6 @@
 
 from common import if_else
+from mappings import get_mapping_dbpedia_color
 #import colorsys
 #from rdflib import ConjunctiveGraph, Namespace, URIRef, Literal
 
@@ -18,6 +19,7 @@ class Color:
         self.rgb = self.__parse_color(color, format)
         self.hex = self.__format_hex()
         self.__build_uris()
+        self.__build_mappings()
 
     def __parse_color(self, color, format):
         if (format == "rgb"):
@@ -50,6 +52,10 @@ class Color:
             self.primary_uri = self.uri
         else:
             self.primary_uri = "%s/%s/%s" % (self.base, formats["rrggbb"], self.hex)
+
+    def __build_mappings(self):
+        self.mappings = {}
+        self.mappings["dbpedia_color"] = get_mapping_dbpedia_color(self.hex)
     
     #def get_rdf(self):
     #    if (self.graph == None):

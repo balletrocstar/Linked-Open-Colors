@@ -20,9 +20,8 @@
     <dbpo:rgbCoordinateBlue>{{color.rgb.2}}</dbpo:rgbCoordinateBlue>
     <dbpp:hex>{{color.hex}}</dbpp:hex>
     <foaf:page rdf:resource="{{color.uri}}.html" />
-    {% if color.format != "rrggbb" %}
-    <owl:sameAs rdf:resource="{{color.primary_uri}}" />
-    {% endif %}
+    {% if color.format != "rrggbb" %}<owl:sameAs rdf:resource="{{color.primary_uri}}" />{% endif %}
+    {% if color.mappings.dbpedia_color %}<owl:sameAs rdf:resource="{{color.mappings.dbpedia_color}}" />{% endif %}
   </dbpo:Colour>
   
 </rdf:RDF>
