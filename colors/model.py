@@ -31,7 +31,13 @@ class Color:
             return (int(self.color[0:2], 16), int(self.color[2:4], 16), int(self.color[4:6], 16))
         elif (self.format == "r,g,b"):
             splitted = self.color.split(",")
-            return (int(splitted[0]), int(splitted[1]), int(splitted[2]))
+            r = int(splitted[0])
+            g = int(splitted[1])
+            b = int(splitted[2])
+            if (r > 255 or g > 255 or b > 255):
+                raise Exception("Invalid color: " + self.color)
+            else:
+                return (r, g, b)
         elif (self.format == "css"):
             rgb = get_mapping_css_color(self.color)
             if (rgb == None):
@@ -39,7 +45,7 @@ class Color:
             else:
                 return (int(rgb[0:2], 16), int(rgb[2:4], 16), int(rgb[4:6], 16))
         else:
-            raise Exception("Unssoported format: " + self.format)
+            raise Exception("Unssuported format: " + self.format)
 
     def __str__(self):
         if (self.format == "rgb" or self.format == "rrggbb"):
