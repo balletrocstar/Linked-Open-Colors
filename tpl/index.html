@@ -29,10 +29,12 @@
 
     <p>
       <form id="colors" action="" method="post" style="width: 100%; display: block; margin: 1.5em auto 2em 5em;">
+        <tt style="font-size: 1.5em;">http://purl.org/color/</tt>
         <select name="type" title="type">
           <option value="rgb">rgb</option>
+          <option value="css">css</option>
         </select>
-        <tt style="font-size: 1.5em;">#</tt>
+        <tt style="font-size: 1.5em;">/</tt>
         <input type="text" name="color" value="FF0000" size="6" maxlength="6" title="color" />
         <input type="submit" value="Go" />
       </form>
@@ -46,6 +48,7 @@
       <li><a href="color/rgb/FF0000">http://purl.org/color/rgb/FF0000</a></li>
       <li><a href="color/rgb/F00">http://purl.org/color/rgb/F00</a></li>
       <li><a href="color/rgb/255,0,0">http://purl.org/color/rgb/255,0,0</a></li>
+      <li><a href="color/css/Red">http://purl.org/color/css/Red</a></li>
     </ul>
 
     <p>
@@ -65,11 +68,7 @@
             $("#colors").submit(function() {
                 var type =  $("#colors select[name=type] :selected").val();
                 var color =  $("#colors input[name=color]").val();
-                if (color.length != 6) {
-                    alert("Invalid color!");
-                } else {
-                    window.location = window.location + "color/" + type + "/" + color;
-                }
+                window.location = window.location + "color/" + type + "/" + color;
                 return false;
             });
         });
