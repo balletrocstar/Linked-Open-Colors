@@ -11,8 +11,8 @@ def retrieve_mappings():
     path = path = os.path.join(os.path.dirname(__file__), "..", "data", "mappings_css_colors.csv")
     reader = csv.reader(open(path, "r"), delimiter=",", quotechar="\"")
     for row in reader:
-        css = row[0].replace("\xc2\xa0", "")
-        rgb = row[1]
+        css = row[0][:-2]
+        rgb = row[1][1:]
         mappings[css] = rgb
 
     return mappings
