@@ -31,3 +31,9 @@ def rgb_rdf(request, rgb):
     format = if_else(len(rgb)==3, "rgb", "rrggbb")
     return color_rdf(request, rgb, format)
 
+def css_html(request, css):
+    return color_html(request, css, "css")
+
+def css_rdf(request, css):
+    return color_rdf(request, css, "css")
+

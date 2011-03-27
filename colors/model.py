@@ -1,13 +1,14 @@
 
 from common import if_else
-from mappings import get_mapping_dbpedia_color
+from mappings import get_mapping_dbpedia_color, get_mapping_css_color
 #import colorsys
 #from rdflib import ConjunctiveGraph, Namespace, URIRef, Literal
 
 formats = {
             "rgb"    : "rgb",
             "rrggbb" : "rgb",
-            "r,g,b"  : "rgb"
+            "r,g,b"  : "rgb",
+            "css"    : "css"
          }
 
 class Color:
@@ -16,26 +17,36 @@ class Color:
         self.base = base
         self.color = color
         self.format = format
-        self.rgb = self.__parse_color(color, format)
+        self.rgb = self.__parse_color()
         self.hex = self.__format_hex()
         self.__build_uris()
         self.__build_mappings()
 
-    def __parse_color(self, color, format):
-        if (format == "rgb"):
-            return (int(color[0], 16) * 16 + int(color[0], 16), 
-                    int(color[1], 16) * 16 + int(color[1], 16), 
-                    int(color[2], 16) * 16 + int(color[2], 16))
-        elif (format == "rrggbb"):
-            return (int(color[0:2], 16), int(color[2:4], 16), int(color[4:6], 16))
-        elif (format == "r,g,b"):
-            splitted = color.split(",")
+    def __parse_color(self):
+        if (self.format == "rgb"):
+            return (int(self.color[0], 16) * 16 + int(self.color[0], 16), 
+                    int(self.color[1], 16) * 16 + int(self.color[1], 16), 
+                    int(self.color[2], 16) * 16 + int(self.color[2], 16))
+        elif (self.format == "rrggbb"):
+            return (int(self.color[0:2], 16), int(self.color[2:4], 16), int(self.color[4:6], 16))
+        elif (self.format == "r,g,b"):
+            splitted = self.color.split(",")
             return (int(splitted[0]), int(splitted[1]), int(splitted[2]))
+        elif (self.format == "css"):
+            rgb = get_mapping_css_color(self.color)
+            if (rgb == None):
+                #FIXME
+                return rgb
+            else:
+                return (int(rgb[0:2], 16), int(rgb[2:4], 16), int(rgb[4:6], 16))
         else:
             pass #FIXME
 
     def __str__(self):
-        return "#%s" % self.hex
+        if (self.format == "rgb" or self.format == "rrggbb"):
+            return "#%s" % self.color
+        else:
+            return self.color
 
     def __format_hex(self):
         if (self.format == "rrggbb"):
