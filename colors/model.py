@@ -35,12 +35,11 @@ class Color:
         elif (self.format == "css"):
             rgb = get_mapping_css_color(self.color)
             if (rgb == None):
-                #FIXME
-                return rgb
+                raise Exception("Invalid CSS color: " + self.color)
             else:
                 return (int(rgb[0:2], 16), int(rgb[2:4], 16), int(rgb[4:6], 16))
         else:
-            pass #FIXME
+            raise Exception("Unssoported format: " + self.format)
 
     def __str__(self):
         if (self.format == "rgb" or self.format == "rrggbb"):
