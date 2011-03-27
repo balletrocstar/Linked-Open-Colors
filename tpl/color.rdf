@@ -14,7 +14,7 @@
   </foaf:Document>
 
   <dbpo:Colour rdf:about="{{color.uri}}">
-    <rdfs:label>#{{color.color}}</rdfs:label>
+    <rdfs:label>{{color}}</rdfs:label>
     <dbpo:rgbCoordinateRed>{{color.rgb.0}}</dbpo:rgbCoordinateRed>
     <dbpo:rgbCoordinateGreen>{{color.rgb.1}}</dbpo:rgbCoordinateGreen>
     <dbpo:rgbCoordinateBlue>{{color.rgb.2}}</dbpo:rgbCoordinateBlue>
