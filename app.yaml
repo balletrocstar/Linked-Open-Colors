@@ -1,5 +1,5 @@
-application: linkedcolors
-version: 4
+application: linkedopencolors
+version: 5
 runtime: python
 api_version: 1
 
