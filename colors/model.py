@@ -55,7 +55,7 @@ class Color:
 
     def __format_hex(self):
         if (self.format == "rrggbb"):
-            return self.color
+            return self.color.upper()
         else:
             r = if_else(self.rgb[0]<16, "0%X" % self.rgb[0], "%X" % self.rgb[0])
             g = if_else(self.rgb[1]<16, "0%X" % self.rgb[1], "%X" % self.rgb[1])
@@ -64,7 +64,7 @@ class Color:
     
     def __build_uris(self):
         self.uri = "%s/%s/%s" % (self.base, formats[self.format], self.color)
-        if (self.format == "rrggbb"):
+        if (self.color == self.hex):
             self.primary_uri = self.uri
         else:
             self.primary_uri = "%s/%s/%s" % (self.base, formats["rrggbb"], self.hex)
