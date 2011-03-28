@@ -34,3 +34,8 @@ class KeyInsensitiveDict:
             key = key.lower()
         return self.__dict__["d"][key]
 
+    def __contains__(self, key):
+        if (hasattr(key, "lower")):
+            key = key.lower()
+        return (key in self.__dict__["d"])
+
