@@ -17,7 +17,8 @@ from django.http import HttpResponsePermanentRedirect
 
 urlpatterns = patterns('',
     (r'^$', 'django.views.generic.simple.direct_to_template', {'template': 'index.html'}),
-    (r'^color', lambda request: HttpResponsePermanentRedirect("/")),
+    (r'^color$', lambda request: HttpResponsePermanentRedirect("/")),
+    (r'^color/$', lambda request: HttpResponsePermanentRedirect("/")),
     (r'^favicon.ico', lambda request: HttpResponsePermanentRedirect("/resources/images/favicon.ico")),
     (r'^color/rgb/(?P<color>[0-9A-F]{3})$', 'colors.views.color'),
     (r'^color/rgb/(?P<rgb>[0-9A-F]{3}).html$', 'colors.views.rgb_html'),
