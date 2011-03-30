@@ -39,7 +39,7 @@
               <option value="css">css</option> 
             </select> 
             <tt style="font-size: 1.5em;">/</tt> 
-            <input id="colorpickerField" type="text" name="color" value="FF0000" size="6" maxlength="6" title="color" /> 
+            <input id="colorpickerField" type="text" name="color" value="ff0000" size="6" maxlength="6" title="color" /> 
             <input type="submit" value="Go" /> 
           </form> 
         </div> 
@@ -54,10 +54,10 @@
           		<li><a href="color/rgb/255,0,0">http://purl.org/color/rgb/255,0,0</a></li> 
           		<li><a href="color/css/red">http://purl.org/color/css/red</a></li> 
         	</ul> 
-	     	<p> 
-	        	The source code is available at: <a href="http://hg.moreways.net/loc">http://hg.moreways.net/loc</a> 
-	        </p>
 	    </div>
+	    <p style="margin-top: 2em; margin-bottom: 1em;"> 
+	        The source code is available at: <a href="http://hg.moreways.net/loc">http://hg.moreways.net/loc</a> 
+	    </p>
 	</div>
 
     <div id="footer"> 
@@ -66,20 +66,31 @@
     </div>
 
 	<script type="text/javascript">
-	    $('#colorpickerField').ColorPicker({
-		    color: '#ff0000',
-		    onShow: function (colpkr) {
-			    $(colpkr).fadeIn(500);
-			    return false;
-		    },
-		    onHide: function (colpkr) {
-			    $(colpkr).fadeOut(500);
-			    return fasle;
-		    },
-		    onChange: function (hsb, hex, rgb) {
-			    $('#colorpickerField').val(hex);
-		    }
-	    });
+        $(document).ready(function() {
+
+            $("#colors").submit(function() {
+                var type =  $("#colors select[name=type] :selected").val();
+                var color =  $("#colors input[name=color]").val();
+                window.location = window.location + "color/" + type + "/" + color;
+                return false;
+            });
+
+	        $('#colorpickerField').ColorPicker({
+		        color: '#ff0000',
+		        onShow: function (colpkr) {
+			        $(colpkr).fadeIn(500);
+			        return false;
+		        },
+		        onHide: function (colpkr) {
+			        $(colpkr).fadeOut(500);
+			        return false;
+		        },
+		        onChange: function (hsb, hex, rgb) {
+			        $('#colorpickerField').val(hex);
+		        }
+	        });
+
+        });
     </script>
 </body>
 
