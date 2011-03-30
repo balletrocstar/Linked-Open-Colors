@@ -50,6 +50,8 @@ class Color:
     def __str__(self):
         if (self.format == "rgb" or self.format == "rrggbb"):
             return "#%s" % self.color
+        elif (self.format == "r,g,b"):
+            return "rgb(%s)" % self.color
         else:
             return self.color
 
