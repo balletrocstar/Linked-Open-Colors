@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html 
+  version="HTML+RDFa 1.1"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:dct="http://purl.org/dc/terms/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:sioc="http://rdfs.org/sioc/ns#" 
+  lang="en"
+>
+
+  <head>
+    <title property="dct:title">Linked Open Colors</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="transformation" href="http://www-sop.inria.fr/acacia/soft/RDFa2RDFXML.xsl"/>
+    <link rel="stylesheet" type="text/css" href="resources/style.css" />
+    <link rel="foaf:maker" type="application/rdf+xml" title="foaf:maker" href="http://dayures.net/foaf.rdf#me" />
+    <link rel="foaf:maker" type="application/rdf+xml" title="foaf:maker" href="http://www.iminguez.net/foaf.rdf#me" />
+    <link rel="foaf:maker" type="application/rdf+xml" title="foaf:maker" href="http://www.wikier.org/foaf#wikier" />
+  </head>
+
+  <body typeof="foaf:Document" about="">
+
+    <h1>Linked Open Colors</h1>
+
+    <p>
+      @@TODO@@
+    </p>
+
+    <p>
+      <form id="colors" action="" method="post" style="width: 100%; display: block; margin: 1.5em auto 2em 5em;">
+        <tt style="font-size: 1.5em;">http://purl.org/color/</tt>
+        <select name="type" title="type">
+          <option value="rgb">rgb</option>
+          <option value="css">css</option>
+        </select>
+        <tt style="font-size: 1.5em;">/</tt>
+        <input type="text" name="color" value="FF0000" size="6" maxlength="6" title="color" />
+        <input type="submit" value="Go" />
+      </form>
+    </p>
+
+    <p>
+      Some examples:
+    </p>
+
+    <ul style="list-style-type: none;">
+      <li><a href="color/rgb/FF0000">http://purl.org/color/rgb/FF0000</a></li>
+      <li><a href="color/rgb/F00">http://purl.org/color/rgb/F00</a></li>
+      <li><a href="color/rgb/255,0,0">http://purl.org/color/rgb/255,0,0</a></li>
+      <li><a href="color/css/Red">http://purl.org/color/css/Red</a></li>
+    </ul>
+
+    <p>
+      The source code is available at: <a href="http://hg.moreways.net/loc">http://hg.moreways.net/loc</a>
+    </p>
+
+    <div id="footer">
+      This dataset has been created for the April Fools' Day of 2011, 
+      as an informal initiative for promoting Linked Data.
+    </di>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+            $("#colors").submit(function() {
+                var type =  $("#colors select[name=type] :selected").val();
+                var color =  $("#colors input[name=color]").val();
+                window.location = window.location + "color/" + type + "/" + color;
+                return false;
+            });
+        });
+
+    </script>
+
+  </body>
+
+</html>
+

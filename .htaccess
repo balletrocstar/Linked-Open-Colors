@@ -1,9 +1,0 @@
-
-#RewriteBase /loc/
-
-RewriteEngine on
-RewriteRule ^color/?([0-9a-fA-F]{6})$ hub.php?color=$1 [L,QSA]
-RewriteRule ^color/?([0-9a-fA-F]{6}).html$ html.php?color=$1 [L,QSA]
-RewriteRule ^color/?([0-9a-fA-F]{6}).rdf$ rdf.php?color=$1 [L,QSA]
-
-

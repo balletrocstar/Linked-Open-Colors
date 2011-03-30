@@ -17,7 +17,27 @@ AUTHORS
 THIRD PARTY LIBRARIES
 ---------------------
 
-This project uses some third party libraties:
+This project uses some third party libraries:
 
- * PHP Content Negotiation library <http://ptlis.net/source/php/content-negotiation/> (GPLv2)
+ * Google App Engine Django  <http://google-app-engine-django.googlecode.com/>
+
+ * Mimeparse <http://mimeparse.googlecode.com/>
+
+ * RDFLib <http://rdflib.net/>
+
+
+INSTALLING
+----------
+
+if you want to install this application, there are some prerequisites:
+
+ * Install Django, 1.0 or greater 
+
+ * Google App Engine SDK for Python, you should run: 
+
+    ln -s /path/to/google_appengine .google_appengine
+
+And then you can launch it:
+
+    python manage.py runserver
 
