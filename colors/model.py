@@ -13,7 +13,7 @@ formats = {
 
 class Color:
 
-    def __init__(self, color, format, base="http://purl.org/color"):
+    def __init__(self, color, format, base="http://purl.org/colors"):
         self.base = base
         self.color = color
         self.format = format
