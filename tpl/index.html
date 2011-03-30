@@ -1,81 +1,87 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
 <html 
-  version="HTML+RDFa 1.1"
+  version="XHTML+RDFa 1.0"
+  xmlns="http://www.w3.org/1999/xhtml"
   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xmlns:dct="http://purl.org/dc/terms/"
   xmlns:foaf="http://xmlns.com/foaf/0.1/"
   xmlns:sioc="http://rdfs.org/sioc/ns#" 
-  lang="en"
+  xml:lang="en"
 >
 
-  <head>
-    <title property="dct:title">Linked Open Colors</title>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <link rel="transformation" href="http://www-sop.inria.fr/acacia/soft/RDFa2RDFXML.xsl"/>
-    <link rel="stylesheet" type="text/css" href="resources/style.css" />
+<head>
+    <title>Linked Open Colors</title>
+	<link rel="stylesheet" href="resources/css/colorpicker.css" type="text/css" />
+    <link rel="stylesheet" media="screen" type="text/css" href="resources/css/layout.css" />
+	<script type="text/javascript" src="resources/js/jquery.js"></script>
+	<script type="text/javascript" src="resources/js/colorpicker.js"></script>
+    <script type="text/javascript" src="resources/js/eye.js"></script>
+    <script type="text/javascript" src="resources/js/utils.js"></script>
+    <script type="text/javascript" src="resources/js/layout.js?ver=1.0.2"></script>
     <link rel="foaf:maker" type="application/rdf+xml" title="foaf:maker" href="http://dayures.net/foaf.rdf#me" />
     <link rel="foaf:maker" type="application/rdf+xml" title="foaf:maker" href="http://www.iminguez.net/foaf.rdf#me" />
+    <link rel="foaf:maker" type="application/rdf+xml" title="foaf:maker" href="http://berrueta.net/foaf.rdf#me" />
     <link rel="foaf:maker" type="application/rdf+xml" title="foaf:maker" href="http://www.wikier.org/foaf#wikier" />
-  </head>
+</head>
 
-  <body typeof="foaf:Document" about="">
+<body>
 
-    <h1>Linked Open Colors</h1>
+	<div class="content">
+	    <div class="header">
+        	<h1>Linked Open Colors</h1>
+     	</div>
+        <div class="form"> 
+          <form id="colors" action="" method="post" style="width: 100%; display: block; margin: 1.5em auto 2em 5em;"> 
+            <tt style="font-size: 1.5em;">http://purl.org/colors/</tt> 
+            <select name="type" title="type"> 
+              <option value="rgb">rgb</option> 
+              <option value="css">css</option> 
+            </select> 
+            <tt style="font-size: 1.5em;">/</tt> 
+            <input id="colorpickerField" type="text" name="color" value="FF0000" size="6" maxlength="6" title="color" /> 
+            <input type="submit" value="Go" /> 
+          </form> 
+        </div> 
+     
+        <h2 class="examples"> 
+          Some examples:
+        </h2> 
+     	<div class="examples">
+        	<ul class="examples"> 
+          		<li><a href="color/rgb/FF0000">http://purl.org/color/rgb/FF0000</a></li> 
+          		<li><a href="color/rgb/F00">http://purl.org/color/rgb/F00</a></li> 
+          		<li><a href="color/rgb/255,0,0">http://purl.org/color/rgb/255,0,0</a></li> 
+          		<li><a href="color/css/Red">http://purl.org/color/css/Red</a></li> 
+        	</ul> 
+	     	<p> 
+	        	The source code is available at: <a href="http://hg.moreways.net/loc">http://hg.moreways.net/loc</a> 
+	        </p>
+	    </div>
+	</div>
 
-    <p>
-      @@TODO@@
-    </p>
+    <div id="footer"> 
+        <a href="/">Linked Open Colors</a>, dataset created for the April 
+        Fools' Day of 2011 as an informal initiative for promoting Linked Data.
+    </div>
 
-    <p>
-      <form id="colors" action="" method="post" style="width: 100%; display: block; margin: 1.5em auto 2em 5em;">
-        <tt style="font-size: 1.5em;">http://purl.org/color/</tt>
-        <select name="type" title="type">
-          <option value="rgb">rgb</option>
-          <option value="css">css</option>
-        </select>
-        <tt style="font-size: 1.5em;">/</tt>
-        <input type="text" name="color" value="FF0000" size="6" maxlength="6" title="color" />
-        <input type="submit" value="Go" />
-      </form>
-    </p>
-
-    <p>
-      Some examples:
-    </p>
-
-    <ul style="list-style-type: none;">
-      <li><a href="color/rgb/FF0000">http://purl.org/color/rgb/FF0000</a></li>
-      <li><a href="color/rgb/F00">http://purl.org/color/rgb/F00</a></li>
-      <li><a href="color/rgb/255,0,0">http://purl.org/color/rgb/255,0,0</a></li>
-      <li><a href="color/css/Red">http://purl.org/color/css/Red</a></li>
-    </ul>
-
-    <p>
-      The source code is available at: <a href="http://hg.moreways.net/loc">http://hg.moreways.net/loc</a>
-    </p>
-
-    <div id="footer">
-      This dataset has been created for the April Fools' Day of 2011, 
-      as an informal initiative for promoting Linked Data.
-    </di>
-
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.js"></script>
-
-    <script type="text/javascript">
-
-        $(document).ready(function() {
-            $("#colors").submit(function() {
-                var type =  $("#colors select[name=type] :selected").val();
-                var color =  $("#colors input[name=color]").val();
-                window.location = window.location + "color/" + type + "/" + color;
-                return false;
-            });
-        });
-
+	<script type="text/javascript">
+	    $('#colorpickerField').ColorPicker({
+		    color: '#ff0000',
+		    onShow: function (colpkr) {
+			    $(colpkr).fadeIn(500);
+			    return false;
+		    },
+		    onHide: function (colpkr) {
+			    $(colpkr).fadeOut(500);
+			    return fasle;
+		    },
+		    onChange: function (hsb, hex, rgb) {
+			    $('#colorpickerField').val(hex);
+		    }
+	    });
     </script>
-
-  </body>
+</body>
 
 </html>
 
