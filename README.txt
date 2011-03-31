@@ -23,8 +23,6 @@ This project uses some third party libraries:
 
  * Mimeparse <http://mimeparse.googlecode.com/>
 
- * RDFLib <http://rdflib.net/>
-
 
 INSTALLING
 ----------
