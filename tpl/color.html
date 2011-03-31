@@ -16,42 +16,46 @@
     <link rel="transformation" href="http://www-sop.inria.fr/acacia/soft/RDFa2RDFXML.xsl"/>
     <link rel="alternate" type="application/rdf+xml" title="RDF" href="{{color.color}}.rdf" />
     <style type="text/css">
-      h1 {
-        display: block;
-        width: 500px;
-        margin: 2em auto auto auto;
-        padding: 0.5em;
-        background-color: #ffffff;
-        color: #000000;
-        font-size: 4em;
-        font-weight: bold;
-        text-align: center;
-      }
-      a, a:active, a:visited {
-        color: #000000;
-        text-decoration: none;
-      }
-      a:hover {
-        color: #000000;
-        text-decoration: underline;
-      }
+        div.color{
+            background-color:#{{color.hex}};
+        }
+
+        a, a:active, a:visited {
+            color: #000000;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #000000;
+            text-decoration: underline;
+        }
+
     </style>
+    <link rel="stylesheet" media="screen" type="text/css" href="/resources/css/layout.css" />
+    <title>ColorPicker - jQuery plugin</title>
   </head>
 
-  <body typeof="foaf:Document" about="" style="background-color: #{{color.hex}}; padding: 0; margin: 0;">
 
-    <h1>
-      <a rel="foaf:primaryTopic" href="{{color.uri}}" title="color {{color}}">
-        {{color}}
-      </a>
-    </h1>
+<body typeof="foaf:Document" about="" >
+	<div class="content">
+	<div class="header">
+    	<h1>Linked Open Colors</h1>
+ 	</div>
+    <div class="colors"> 
+    	<div class="color">
+			
+		</div>
+		<div class="label">
+			<tt style="font-size: 1.5em;"><a rel="foaf:primaryTopic" href="{{color.uri}}" title="color {{color}}">{{color.uri}}</a></tt>
+		</div> 
+    </div> 
 
-    <div style="background-color: #ffffff; width: 100%; margin: 0; position:fixed; bottom: 0; font-size: 0.7em; text-align: center;">
-        <a href="/">Linked Open Colors</a>, dataset created for the April 
-        Fools' Day of 2011 as an informal initiative for promoting Linked Data.
+    <div id="footer"> 
+      This dataset has been created for the April Fools' Day of 2011, 
+      as an informal initiative for promoting Linked Data.
     </div>
+    </div>
+</body>
 
-  </body>
 
 </html>
 
