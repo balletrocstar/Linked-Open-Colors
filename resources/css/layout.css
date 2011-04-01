@@ -42,7 +42,10 @@ div.content{
 	width: 700px;
 	border: 2px solid black;
 	border-radius:10px;
-	margin-top:2em;
+    -moz-border-radius:10px;
+	margin-top: 5em;
+    margin-left: auto;
+    margin-right: auto;
 	padding:1em;
 	background-color:#87c791;
 }
@@ -52,11 +55,12 @@ div.header{
 	margin-left:auto;
 	margin-right:auto;
 }
-div.form{
+div.form, {
 	margin: 2em 3em 4em 3em;
 	background-color:white;
 	padding: 3em;
 	border-radius:10px;	
+    -moz-border-radius:10px;
 }
 
 h1 {
@@ -89,7 +93,8 @@ ul.examples{
 }
 
 #footer{
-    padding-top:1em;
+    padding-top: 3em;
+    text-align: center;
 }
 
 div.colors{
@@ -97,16 +102,18 @@ div.colors{
 	margin: 2em 3em 4em 3em;
 	background-color:white;
 	padding: 3em;
-	border-radius:10px;
+	border-radius:10px;    
+    -moz-border-radius:10px;
 }
 
 div.color{
 	margin:0 auto;
 	margin-bottom:1em;
-	width:100px;
-	height:100px;
+	width:150px;
+	height:150px;
 	border: 2px solid black;
 	border-radius:10px;
+    -moz-border-radius:10px;
 }
 
 
