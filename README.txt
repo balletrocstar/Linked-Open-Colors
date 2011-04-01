@@ -10,7 +10,7 @@ AUTHORS
 -------
 
  * Carlos Tejo <http://dayures.net/foaf.rdf#me>
- * Iván Mínguez <http://www.iminguez.net/foaf.rdf#me>
+ * Iván Mínguez <http://www.iminguez.com/foaf.rdf#me>
  * Diego Berrueta <http://berrueta.net/foaf.rdf#me>
  * Sergio Fernández <http://www.wikier.org/foaf#wikier>
 
