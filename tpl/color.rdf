@@ -6,6 +6,7 @@
     xmlns:foaf="http://xmlns.com/foaf/0.1/"
     xmlns:dbpo="http://dbpedia.org/ontology/"
     xmlns:dbpp="http://dbpedia.org/property/"
+    xmlns:cv="http://ontologi.es/colour/vocab#"
     xml:lang="en"
 >
 
@@ -19,9 +20,11 @@
     <dbpo:rgbCoordinateGreen>{{color.rgb.1}}</dbpo:rgbCoordinateGreen>
     <dbpo:rgbCoordinateBlue>{{color.rgb.2}}</dbpo:rgbCoordinateBlue>
     <dbpp:hex>{{color.hex}}</dbpp:hex>
+    <cv:hex_code>{{color.hex}}</cv:hex_code>
     <foaf:page rdf:resource="{{color.uri}}.html" />
     {% if color.uri != color.primary_uri %}<owl:sameAs rdf:resource="{{color.primary_uri}}" />{% endif %}
     {% if color.mappings.dbpedia_color %}<owl:sameAs rdf:resource="{{color.mappings.dbpedia_color}}" />{% endif %}
+    <owl:sameAs rdf:resource="http://ontologi.es/colour/{{color.hex}}" />
   </dbpo:Colour>
   
 </rdf:RDF>
