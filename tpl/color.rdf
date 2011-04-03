@@ -7,6 +7,7 @@
     xmlns:dbpo="http://dbpedia.org/ontology/"
     xmlns:dbpp="http://dbpedia.org/property/"
     xmlns:cv="http://ontologi.es/colour/vocab#"
+    xmlns:colour = "http://data.colourphon.co.uk/def/colour-ontology#"
     xml:lang="en"
 >
 
@@ -19,6 +20,12 @@
     <dbpo:rgbCoordinateRed>{{color.rgb.0}}</dbpo:rgbCoordinateRed>
     <dbpo:rgbCoordinateGreen>{{color.rgb.1}}</dbpo:rgbCoordinateGreen>
     <dbpo:rgbCoordinateBlue>{{color.rgb.2}}</dbpo:rgbCoordinateBlue>
+    <colour:red>{{color.rgb.0}}</colour:red>
+    <colour:green>{{color.rgb.1}}</colour:green>
+    <colour:blue>{{color.rgb.2}}</colour:blue>
+    <cv:r>{{color.rgb_percent.0}}</cv:r>
+    <cv:g>{{color.rgb_percent.1}}</cv:g>
+    <cv:b>{{color.rgb_percent.2}}</cv:b>
     <dbpp:hex>{{color.hex}}</dbpp:hex>
     <cv:hex_code>{{color.hex}}</cv:hex_code>
     <foaf:page rdf:resource="{{color.uri}}.html" />
