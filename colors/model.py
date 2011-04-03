@@ -19,6 +19,7 @@ class Color:
         self.format = format
         self.rgb = self.__parse_color()
         self.hex = self.__format_hex()
+        self.rgb_percent = self.__format_rgb_percent()
         self.__build_uris()
         self.__build_mappings()
 
@@ -74,6 +75,16 @@ class Color:
     def __build_mappings(self):
         self.mappings = {}
         self.mappings["dbpedia_color"] = get_mapping_dbpedia_color(self.hex)
+        
+    def __format_rgb_percent(self):
+        # kudos https://bitbucket.org/ubernostrum/webcolors
+        # In order to maintain precision for common values,
+        # 256 / 2**n is special-cased for values of n
+        # from 0 through 4, as well as 0 itself.
+        specials = {255: 1, 128: 0.5, 64: 0.25,
+                    32: 0.125, 16: 0.0625, 0: 0}
+        #return tuple([specials.get(d, round((d / 255.0) * 100, 2)) for d in self.rgb])
+        return tuple([specials.get(d, (d / 255.0)) for d in self.rgb])
     
     #def get_rdf(self):
     #    if (self.graph == None):
