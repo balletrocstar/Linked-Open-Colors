@@ -9,6 +9,8 @@
 		<dct:creator rdf:resource="http://www.iminguez.com/foaf.rdf#me" />
 		<dct:creator rdf:resource="http://berrueta.net/foaf.rdf#me" />
 		<dct:creator rdf:resource="http://www.wikier.org/foaf#wikier" />
+		<dct:created>2011-04-01"^^xsd:date</dct:created>
+		<dct:modified>2011-04-03"^^xsd:date</dct:modified>
 		<void:exampleResource rdf:resource="http://purl.org/color/rgb/FFFFFF" />
 		<void:exampleResource rdf:resource="http://purl.org/color/rgb/255,255,255" />
 		<void:exampleResource rdf:resource="http://purl.org/color/css/White" />
