@@ -25,6 +25,7 @@
     {% if color.uri != color.primary_uri %}<owl:sameAs rdf:resource="{{color.primary_uri}}" />{% endif %}
     {% if color.mappings.dbpedia_color %}<owl:sameAs rdf:resource="{{color.mappings.dbpedia_color}}" />{% endif %}
     <owl:sameAs rdf:resource="http://ontologi.es/colour/{{color.hex}}" />
+    <owl:sameAs rdf:resource="http://data.colourphon.co.uk/id/colour/{{color.hex}}" />
   </dbpo:Colour>
   
 </rdf:RDF>
