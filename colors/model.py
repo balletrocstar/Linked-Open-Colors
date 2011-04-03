@@ -1,7 +1,7 @@
 
 from common import if_else
 from mappings import get_mapping_dbpedia_color, get_mapping_css_color
-#import colorsys
+import colorsys
 #from rdflib import ConjunctiveGraph, Namespace, URIRef, Literal
 
 formats = {
@@ -20,6 +20,11 @@ class Color:
         self.rgb = self.__parse_color()
         self.hex = self.__format_hex()
         self.rgb_percent = self.__format_rgb_percent()
+        self.rgb_decimal_percent = self.__format_rgb_decimal_percent()
+        self.hsv = self.__format_hsv()
+        self.hls = self.__format_hls()
+        self.hsl = self.__format_hsl()
+        self.hue = self.__hue()
         self.__build_uris()
         self.__build_mappings()
 
@@ -81,11 +86,32 @@ class Color:
         # In order to maintain precision for common values,
         # 256 / 2**n is special-cased for values of n
         # from 0 through 4, as well as 0 itself.
-        specials = {255: 1, 128: 0.5, 64: 0.25,
-                    32: 0.125, 16: 0.0625, 0: 0}
-        #return tuple([specials.get(d, round((d / 255.0) * 100, 2)) for d in self.rgb])
-        return tuple([specials.get(d, (d / 255.0)) for d in self.rgb])
+        specials = {255: 100, 128: 50, 64: 25,
+                    32: 12.5, 16: 6.25, 0: 0}
+        return tuple([specials.get(d, (d / 255.0))*100 for d in self.rgb])
+        
+    def __format_rgb_decimal_percent(self):
+        return tuple([p/100 for p in self.rgb_percent])
     
+    def __format_hsv(self):
+        return tuple([d*100 for d in colorsys.rgb_to_hsv(self.rgb_decimal_percent[0], self.rgb_decimal_percent[1], self.rgb_decimal_percent[2])])
+
+    def __format_hls(self):
+        return tuple([d*100 for d in colorsys.rgb_to_hls(self.rgb_decimal_percent[0], self.rgb_decimal_percent[1], self.rgb_decimal_percent[2])])
+
+    def __format_hsl(self):
+        return tuple([self.hls[0], self.hls[2], self.hls[1]])
+    
+    def __hue(self):
+        # kudos https://bitbucket.org/ubernostrum/webcolors
+        # In order to maintain precision for common values,
+        # 256 / 2**n is special-cased for values of n
+        # from 0 through 4, as well as 0 itself.
+        specials = {360: 100, 180: 50, 90: 25,
+                    45: 12.5, 12.5: 6.25, 0: 0}
+        return specials.get(self.hls[0], (self.hls[0]/100)*360)
+        
+        
     #def get_rdf(self):
     #    if (self.graph == None):
     #        self.graph = self.__get_rdf()

@@ -23,9 +23,13 @@
     <colour:red>{{color.rgb.0}}</colour:red>
     <colour:green>{{color.rgb.1}}</colour:green>
     <colour:blue>{{color.rgb.2}}</colour:blue>
-    <cv:r>{{color.rgb_percent.0}}</cv:r>
-    <cv:g>{{color.rgb_percent.1}}</cv:g>
-    <cv:b>{{color.rgb_percent.2}}</cv:b>
+    <colour:hue>{{color.hue}}</colour:hue>
+    <colour:lightness>{{color.hls.1}}</colour:lightness>
+    <colour:saturation>{{color.hls.2}}</colour:saturation>
+    <colour:hsl>{{color.hue}},{{color.hsl.1}},{{color.hsl.2}}</colour:hsl>
+    <cv:r>{{color.rgb_decimal_percent.0}}</cv:r>
+    <cv:g>{{color.rgb_decimal_percent.1}}</cv:g>
+    <cv:b>{{color.rgb_decimal_percent.2}}</cv:b>
     <dbpp:hex>{{color.hex}}</dbpp:hex>
     <cv:hex_code>{{color.hex}}</cv:hex_code>
     <foaf:page rdf:resource="{{color.uri}}.html" />
