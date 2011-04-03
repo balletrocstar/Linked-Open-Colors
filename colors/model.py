@@ -24,7 +24,10 @@ class Color:
         self.hsv = self.__format_hsv()
         self.hls = self.__format_hls()
         self.hsl = self.__format_hsl()
-        self.hue = self.__hue()
+        self.hue = self.__hue() #in degrees
+        self.saturation = self.__saturation() # percentage
+        self.value = self.__value() # percentage
+        self.lightness  = self.__lightness() # percentage
         self.__build_uris()
         self.__build_mappings()
 
@@ -111,6 +114,14 @@ class Color:
                     45: 12.5, 12.5: 6.25, 0: 0}
         return specials.get(self.hls[0], (self.hls[0]/100)*360)
         
+    def __saturation(self):
+        return self.hsv[1]
+    
+    def __value(self):
+        return self.hsv[2]
+    
+    def __lightness(self):
+        return self.hls[1]
         
     #def get_rdf(self):
     #    if (self.graph == None):

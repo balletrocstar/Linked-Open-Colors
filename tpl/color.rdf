@@ -24,9 +24,9 @@
     <colour:green>{{color.rgb.1}}</colour:green>
     <colour:blue>{{color.rgb.2}}</colour:blue>
     <colour:hue>{{color.hue}}</colour:hue>
-    <colour:lightness>{{color.hls.1}}</colour:lightness>
-    <colour:saturation>{{color.hls.2}}</colour:saturation>
-    <colour:hsl>{{color.hue}},{{color.hsl.1}},{{color.hsl.2}}</colour:hsl>
+    <colour:lightness>{{color.lightness}}</colour:lightness>
+    <colour:saturation>{{color.saturation>}}</colour:saturation>
+    <colour:hsl>{{color.hue}},{{color.saturation>}},{{color.lightness}}</colour:hsl>
     <cv:r>{{color.rgb_decimal_percent.0}}</cv:r>
     <cv:g>{{color.rgb_decimal_percent.1}}</cv:g>
     <cv:b>{{color.rgb_decimal_percent.2}}</cv:b>
