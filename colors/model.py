@@ -93,10 +93,10 @@ class Color:
         # from 0 through 4, as well as 0 itself.
         specials = {255: 100, 128: 50, 64: 25,
                     32: 12.5, 16: 6.25, 0: 0}
-        return tuple([specials.get(d, (d / 255.0))*100 for d in self.rgb])
+        return tuple([specials.get(d, (d / 255.0))/100 for d in self.rgb])
         
     def __format_rgb_decimal_percent(self):
-        return tuple([p/100 for p in self.rgb_percent])
+        return tuple([float(p) for p in self.rgb_percent])
     
     def __format_hsv(self):
         return tuple([d*100 for d in colorsys.rgb_to_hsv(self.rgb_decimal_percent[0], self.rgb_decimal_percent[1], self.rgb_decimal_percent[2])])
