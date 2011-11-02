@@ -9,8 +9,8 @@
 		<dct:creator rdf:resource="http://www.iminguez.com/foaf.rdf#me" />
 		<dct:creator rdf:resource="http://berrueta.net/foaf.rdf#me" />
 		<dct:creator rdf:resource="http://www.wikier.org/foaf#wikier" />
-		<dct:created>2011-04-01"^^xsd:date</dct:created>
-		<dct:modified>2011-04-03"^^xsd:date</dct:modified>
+		<dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2011-04-01</dct:created>
+		<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2011-04-03</dct:modified>
 		<dct:subject rdf:resource="http://dbpedia.org/resource/Color" />
 		<void:feature rdf:resource="http://www.w3.org/ns/formats/RDF_XML" />
 		<void:feature rdf:resource="http://www.w3.org/ns/formats/RDFa" />
